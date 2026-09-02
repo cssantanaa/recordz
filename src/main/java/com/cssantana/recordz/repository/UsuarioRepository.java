@@ -1,0 +1,15 @@
+package com.cssantana.recordz.repository;
+
+import com.cssantana.recordz.model.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+
+    Optional<Usuario> findByEmail(String email);
+    Optional<Usuario> findByNomeUsuario(String nomeUsuario);
+
+    boolean existsByEmail(String email);
+    boolean existsByNomeUsuario(String nomeUsuario);
+}
