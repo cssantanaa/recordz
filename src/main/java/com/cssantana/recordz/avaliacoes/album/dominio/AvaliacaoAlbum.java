@@ -1,4 +1,4 @@
-package com.cssantana.recordz.avaliacoes.album;
+package com.cssantana.recordz.avaliacoes.album.dominio;
 
 import com.cssantana.recordz.album.Album;
 import com.cssantana.recordz.avaliacoes.Nota;

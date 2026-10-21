@@ -1,25 +1,13 @@
+package com.cssantana.recordz.avaliacoes.album.shared.mapper;
 
-package com.cssantana.recordz.avaliacoes.album;
-
-import com.cssantana.recordz.album.Album;
-import com.cssantana.recordz.usuario.Usuario;
+import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
+import com.cssantana.recordz.avaliacoes.album.listar.AvaliacaoAlbumResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AvaliacaoAlbumMapper {
+public class AvaliacaoAlbumResponseMapper {
 
-    public AvaliacaoAlbum paraEntidade(AvaliacaoAlbumRequest request, Usuario usuario, Album album) {
-        return new AvaliacaoAlbum(
-                request.nota(),
-                request.comentario(),
-                usuario,
-                album
-        );
-    }
-
-    public AvaliacaoAlbumResponse paraResponse(
-            AvaliacaoAlbum avaliacao
-    ) {
+    public AvaliacaoAlbumResponse paraResponse(AvaliacaoAlbum avaliacao) {
         String nomeUsuario = null;
         String fotoUsuario = null;
 

@@ -1,4 +1,4 @@
-package com.cssantana.recordz.avaliacoes.album;
+package com.cssantana.recordz.avaliacoes.album.listar;
 
 import com.cssantana.recordz.avaliacoes.Nota;
 import java.time.LocalDateTime;

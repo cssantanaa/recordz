@@ -1,6 +1,6 @@
 package com.cssantana.recordz.album;
 
-import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbum;
+import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
 import com.cssantana.recordz.diario.Diario;
 import com.cssantana.recordz.musica.Musica;
 import jakarta.persistence.*;

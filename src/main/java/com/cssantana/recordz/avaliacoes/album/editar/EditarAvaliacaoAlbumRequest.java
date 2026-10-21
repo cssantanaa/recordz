@@ -1,10 +1,10 @@
-package com.cssantana.recordz.avaliacoes.album;
+package com.cssantana.recordz.avaliacoes.album.editar;
 
 import com.cssantana.recordz.avaliacoes.Nota;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public record AvaliacaoAlbumRequest(
+public record EditarAvaliacaoAlbumRequest(
 
         @NotNull(message = "A nota é obrigatória.")
         Nota nota,
