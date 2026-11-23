@@ -1,7 +1,7 @@
 package com.cssantana.recordz.avaliacoes.album.criar;
 
 import com.cssantana.recordz.album.Album;
-import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbum;
 import com.cssantana.recordz.usuario.Usuario;
 import org.springframework.stereotype.Component;
 

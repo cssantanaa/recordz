@@ -7,10 +7,9 @@ import java.util.Optional;
 
 public interface AvaliacaoMusicaRepository extends JpaRepository<AvaliacaoMusica, Long> {
 
-    Optional<AvaliacaoMusica> findByUsuarioIdAndFaixaId(Long usuarioId, Long faixaId);
+    Optional<AvaliacaoMusica> findByUsuarioIdAndMusicaId(Long usuarioId, Long musicaId);
 
-    boolean existsByUsuarioIdAndFaixaId(Long usuarioId, Long faixaId);
+    boolean existsByUsuarioIdAndMusicaId(Long usuarioId, Long musicaId);
 
-    List<AvaliacaoMusica> findByFaixaIdOrderByDataAvaliacaoDesc(Long faixaId);
-    List<AvaliacaoMusica> findByUsuarioIdOrderByDataAvaliacaoDesc(Long usuarioId);
+    List<AvaliacaoMusica> findByMusicaIdOrderByDataAvaliacaoDesc(Long musicaId);
 }

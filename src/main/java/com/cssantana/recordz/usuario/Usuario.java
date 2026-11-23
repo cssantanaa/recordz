@@ -1,22 +1,32 @@
+
 package com.cssantana.recordz.usuario;
 
-import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbum;
 import com.cssantana.recordz.avaliacoes.musica.AvaliacaoMusica;
 import com.cssantana.recordz.diario.Diario;
 import jakarta.persistence.*;
-import lombok.*;
-import java.util.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(
         name = "usuarios",
         uniqueConstraints = {
-                @UniqueConstraint(name = "usuario_email", columnNames = "email"),
-                @UniqueConstraint(name = "usuario_usuario", columnNames = "usuario")
+                @UniqueConstraint(
+                        name = "usuario_email",
+                        columnNames = "email"
+                ),
+                @UniqueConstraint(
+                        name = "usuario_usuario",
+                        columnNames = "nome_usuario"
+                )
         }
 )
 public class Usuario {
@@ -54,6 +64,44 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<Diario> registrosDiario = new ArrayList<>();
+
+    public static Usuario criar(
+            String nome,
+            String nomeUsuario,
+            String email,
+            String senha,
+            String biografia,
+            String fotoPerfil
+    ) {
+        Usuario usuario = new Usuario();
+
+        usuario.nome = nome;
+        usuario.nomeUsuario = nomeUsuario;
+        usuario.email = email;
+        usuario.senha = senha;
+        usuario.biografia = biografia;
+        usuario.fotoPerfil = fotoPerfil;
+
+        return usuario;
+    }
+
+    public void atualizar(
+            String nome,
+            String nomeUsuario,
+            String email,
+            String biografia,
+            String fotoPerfil
+    ) {
+        this.nome = nome;
+        this.nomeUsuario = nomeUsuario;
+        this.email = email;
+        this.biografia = biografia;
+        this.fotoPerfil = fotoPerfil;
+    }
+
+    public void atualizarSenha(String senha) {
+        this.senha = senha;
+    }
 
     @PrePersist
     protected void aoCriar() {

@@ -1,6 +1,6 @@
 package com.cssantana.recordz.album;
 
-import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbum;
 import com.cssantana.recordz.diario.Diario;
 import com.cssantana.recordz.musica.Musica;
 import jakarta.persistence.*;
@@ -9,10 +9,12 @@ import java.util.*;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(
         name = "albuns",
         uniqueConstraints = {@UniqueConstraint(name = "album_id_spotify", columnNames = "id_spotify")}
 )
+
 public class Album {
 
     @Id
@@ -50,4 +52,19 @@ public class Album {
     @OneToMany(mappedBy = "album")
     private List<Diario> registrosDiario = new ArrayList<>();
 
+    public static Album criar(String idSpotify, String nome, String artista, String imagemUrl, String dataLancamento, Integer quantidadeFaixas, TipoAlbum tipo) {
+        Album album = new Album();
+        album.idSpotify = idSpotify;
+        album.atualizarDados(nome, artista, imagemUrl, dataLancamento, quantidadeFaixas, tipo);
+        return album;
+    }
+
+    public void atualizarDados(String nome, String artista, String imagemUrl, String dataLancamento, Integer quantidadeFaixas, TipoAlbum tipo) {
+        this.nome = nome;
+        this.artista = artista;
+        this.imagemUrl = imagemUrl;
+        this.dataLancamento = dataLancamento;
+        this.quantidadeFaixas = quantidadeFaixas;
+        this.tipo = tipo;
+    }
 }

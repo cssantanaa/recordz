@@ -8,6 +8,5 @@ public interface DiarioRepository extends JpaRepository<Diario, Long> {
 
     List<Diario> findByUsuarioIdOrderByDataEscutaDesc(Long usuarioId);
     List<Diario> findByAlbumIdOrderByDataEscutaDesc(Long albumId);
-
-    List<Diario> findByFaixaIdOrderByDataEscutaDesc(Long faixaId);
+    List<Diario> findByMusicaIdOrderByDataEscutaDesc(Long musicaId);;
 }

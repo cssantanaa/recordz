@@ -1,7 +1,6 @@
-package com.cssantana.recordz.avaliacoes.album.shared.mapper;
+package com.cssantana.recordz.avaliacoes.album.listar;
 
-import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
-import com.cssantana.recordz.avaliacoes.album.listar.AvaliacaoAlbumResponse;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbum;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,8 +1,8 @@
 package com.cssantana.recordz.avaliacoes.album.editar;
 
-import com.cssantana.recordz.avaliacoes.album.shared.repository.AvaliacaoAlbumRepository;
-import com.cssantana.recordz.avaliacoes.album.shared.mapper.AvaliacaoAlbumResponseMapper;
-import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbumRepository;
+import com.cssantana.recordz.avaliacoes.album.listar.AvaliacaoAlbumResponseMapper;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbum;
 import com.cssantana.recordz.avaliacoes.album.listar.AvaliacaoAlbumResponse;
 import com.cssantana.recordz.shared.exception.RecursoNaoEncontrado;
 import org.springframework.stereotype.Service;
@@ -21,8 +21,7 @@ public class EditarAvaliacaoAlbumService {
 
     @Transactional
     public AvaliacaoAlbumResponse executar(Long avaliacaoId, EditarAvaliacaoAlbumRequest request) {
-        AvaliacaoAlbum avaliacao = repository.findById(avaliacaoId).orElseThrow(() ->
-                new RecursoNaoEncontrado("Avaliação não encontrada."));
+        AvaliacaoAlbum avaliacao = repository.findById(avaliacaoId).orElseThrow(() -> new RecursoNaoEncontrado("Avaliação não encontrada."));
 
         avaliacao.atualizar(request.nota(), request.comentario());
 

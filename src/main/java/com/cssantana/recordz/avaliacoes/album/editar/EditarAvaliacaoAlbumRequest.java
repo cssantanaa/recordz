@@ -6,10 +6,9 @@ import jakarta.validation.constraints.Size;
 
 public record EditarAvaliacaoAlbumRequest(
 
-        @NotNull(message = "A nota é obrigatória.")
-        Nota nota,
+        @NotNull(message = "A nota é obrigatória.") Nota nota,
 
-        @Size(max = 2000, message = "O comentário deve ter no máximo 2000 caracteres.")
-        String comentario
+        @Size(max = 2000, message = "O comentário deve ter no máximo 2000 caracteres.") String comentario
 
-) {}
+) {
+}

@@ -1,8 +1,7 @@
 package com.cssantana.recordz.avaliacoes.album.listar;
 
 import com.cssantana.recordz.album.AlbumRepository;
-import com.cssantana.recordz.avaliacoes.album.shared.repository.AvaliacaoAlbumRepository;
-import com.cssantana.recordz.avaliacoes.album.shared.mapper.AvaliacaoAlbumResponseMapper;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbumRepository;
 import com.cssantana.recordz.shared.exception.RecursoNaoEncontrado;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

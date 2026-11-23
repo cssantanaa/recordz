@@ -1,8 +1,8 @@
 package com.cssantana.recordz.diario;
 
 import com.cssantana.recordz.album.Album;
+import com.cssantana.recordz.musica.Musica;
 import com.cssantana.recordz.usuario.Usuario;
-import com.cssantana.recordz.musica.Faixa;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "registros_diario")
 public class Diario {
 
@@ -29,7 +30,7 @@ public class Diario {
     private Album album;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "faixa_id")
-    private Faixa faixa;
+    @JoinColumn(name = "musica_id")
+    private Musica musica;
 
 }

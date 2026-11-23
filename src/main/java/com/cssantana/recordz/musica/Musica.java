@@ -9,6 +9,7 @@ import java.util.*;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(
         name = "faixas",
         uniqueConstraints = {
@@ -40,10 +41,20 @@ public class Musica {
     @JoinColumn(name = "album_id", nullable = false)
     private Album album;
 
-    @OneToMany(mappedBy = "faixa")
+    @OneToMany(mappedBy = "musica")
     private List<AvaliacaoMusica> avaliacoes = new ArrayList<>();
 
-    @OneToMany(mappedBy = "faixa")
+    @OneToMany(mappedBy = "musica")
     private List<Diario> registrosDiario = new ArrayList<>();
 
+    public static Musica criar(String idSpotify, String nome, Integer numeroFaixa, Integer duracaoMs, Boolean explicita, Album album) {
+        Musica musica = new Musica();
+        musica.idSpotify = idSpotify;
+        musica.nome = nome;
+        musica.numeroFaixa = numeroFaixa;
+        musica.duracaoMs = duracaoMs;
+        musica.explicita = explicita != null && explicita;
+        musica.album = album;
+        return musica;
+    }
 }

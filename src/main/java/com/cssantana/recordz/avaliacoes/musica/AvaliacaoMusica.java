@@ -10,12 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Table(
-        name = "avaliacoes_musica",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "usuario_musica", columnNames = {"usuario_id", "musica_id"} )
-        }
-)
+@Table(name = "avaliacoes_musica", uniqueConstraints = {@UniqueConstraint(name = "usuario_musica", columnNames = {"usuario_id", "musica_id"})})
 public class AvaliacaoMusica {
 
     @Id
@@ -33,11 +28,11 @@ public class AvaliacaoMusica {
     private LocalDateTime dataAvaliacao;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", nullable = false )
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn( name = "musica_id", nullable = false )
+    @JoinColumn(name = "musica_id", nullable = false)
     private Musica musica;
 
     @PrePersist

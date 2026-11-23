@@ -1,6 +1,5 @@
-package com.cssantana.recordz.avaliacoes.album.shared.repository;
+package com.cssantana.recordz.avaliacoes.album;
 
-import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

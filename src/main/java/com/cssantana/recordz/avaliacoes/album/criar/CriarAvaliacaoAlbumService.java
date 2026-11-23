@@ -2,9 +2,9 @@ package com.cssantana.recordz.avaliacoes.album.criar;
 
 import com.cssantana.recordz.album.Album;
 import com.cssantana.recordz.album.AlbumRepository;
-import com.cssantana.recordz.avaliacoes.album.shared.repository.AvaliacaoAlbumRepository;
-import com.cssantana.recordz.avaliacoes.album.shared.mapper.AvaliacaoAlbumResponseMapper;
-import com.cssantana.recordz.avaliacoes.album.dominio.AvaliacaoAlbum;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbumRepository;
+import com.cssantana.recordz.avaliacoes.album.listar.AvaliacaoAlbumResponseMapper;
+import com.cssantana.recordz.avaliacoes.album.AvaliacaoAlbum;
 import com.cssantana.recordz.avaliacoes.album.listar.AvaliacaoAlbumResponse;
 import com.cssantana.recordz.shared.exception.RecursoNaoEncontrado;
 import com.cssantana.recordz.shared.exception.RegraNegocio;

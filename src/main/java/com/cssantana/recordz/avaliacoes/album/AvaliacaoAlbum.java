@@ -1,4 +1,4 @@
-package com.cssantana.recordz.avaliacoes.album.dominio;
+package com.cssantana.recordz.avaliacoes.album;
 
 import com.cssantana.recordz.album.Album;
 import com.cssantana.recordz.avaliacoes.Nota;
@@ -11,11 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor
-@Table(
-        name = "avaliacoes_album",
-        uniqueConstraints = {@UniqueConstraint(name = "usuario_album", columnNames = {"usuario_id", "album_id"})
-        }
-)
+@Table(name = "avaliacoes_album", uniqueConstraints = {@UniqueConstraint(name = "usuario_album", columnNames = {"usuario_id", "album_id"})})
 public class AvaliacaoAlbum {
 
     @Id
@@ -40,12 +36,7 @@ public class AvaliacaoAlbum {
     @JoinColumn(name = "album_id", nullable = false)
     private Album album;
 
-    public AvaliacaoAlbum(
-            Nota nota,
-            String comentario,
-            Usuario usuario,
-            Album album
-    ) {
+    public AvaliacaoAlbum(Nota nota, String comentario, Usuario usuario, Album album) {
         this.nota = nota;
         this.comentario = comentario;
         this.usuario = usuario;

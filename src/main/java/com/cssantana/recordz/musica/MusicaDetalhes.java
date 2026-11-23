@@ -1,12 +1,13 @@
 package com.cssantana.recordz.musica;
 
+import com.cssantana.recordz.avaliacoes.musica.AvaliacaoMusicaResponse;
 import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
-public class FaixaDetalhes {
+public class MusicaDetalhes {
 
     private Long id;
     private String idSpotify;
@@ -20,6 +21,6 @@ public class FaixaDetalhes {
     private String artista;
     private Double mediaAvaliacoes;
 
-    private List<AvaliacaoDto> avaliacoes;
+    private List<AvaliacaoMusicaResponse> avaliacoes;
 
 }
